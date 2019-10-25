@@ -91,6 +91,31 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate XSD union restriction")
+    void testValidateXsdUnionRestriction() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/simpletype/restriction/union_enum.xsd"),
+                getFile("schema/simpletype/restriction/union_enum_valid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/simpletype/restriction/union_enum.xsd"),
+                getFile("schema/simpletype/restriction/union_enum_novalid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/simpletype/restriction/union_enum.xsd"),
+                getFile("schema/simpletype/restriction/union_list_novalid.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }

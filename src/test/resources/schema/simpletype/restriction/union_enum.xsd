@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <!-- referenceable simple type -->
+    <xsd:simpleType name = "simple_type">
+        <xsd:restriction base="xsd:double">
+            <xsd:minInclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <!-- another simple type that can be used in xml -->
+    <xsd:simpleType name = "some_enum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FIRST"/>
+            <xsd:enumeration value="SECOND"/>
+            <xsd:enumeration value="THIRD"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:element name="some_number">
+        <xsd:simpleType>
+            <xsd:union memberTypes="some_enum simple_type"/>
+        </xsd:simpleType>
+    </xsd:element>
+</xsd:schema>
