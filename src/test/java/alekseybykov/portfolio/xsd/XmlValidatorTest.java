@@ -37,6 +37,24 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate XSD base type restriction")
+    void testValidateXsdBaseTypeRestriction() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/restriction/base_type_restriction.xsd"),
+                getFile("schema/restriction/base_type_restriction_valid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/restriction/base_type_restriction.xsd"),
+                getFile("schema/restriction/base_type_restriction_novalid.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }
