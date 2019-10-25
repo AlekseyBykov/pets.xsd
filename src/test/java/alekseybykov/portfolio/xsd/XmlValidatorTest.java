@@ -9,6 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 import java.nio.file.Paths;
 
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 /**
@@ -19,10 +20,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class XmlValidatorTest {
 
     @Test
-    @DisplayName("Validate simple type")
-    void testValidateSimpleType() {
+    @DisplayName("Validate xsd:double")
+    void testValidateXsdDoubleType() {
         assertTrue(
-            XmlValidator.validate(getFile("simple_type.xsd"), getFile("simple_type.xml"))
+            XmlValidator.validate(
+                getFile("schema/type/double.xsd"),
+                getFile("schema/type/double_valid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/type/double.xsd"),
+                getFile("schema/type/double_novalid.xml")
+            )
         );
     }
 
