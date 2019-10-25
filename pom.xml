@@ -20,7 +20,7 @@
     </properties>
 
     <name>xsd</name>
-    <description>Various examples of XML documents validation by XSD schema.</description>
+    <description>Various examples of XML documents validation by XSD schemas.</description>
     <url>https://alekseybykov.github.io</url>
 
     <developers>

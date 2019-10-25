@@ -24,15 +24,15 @@ class XmlValidatorTest {
     void testValidateXsdDoubleType() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/type/double.xsd"),
-                getFile("schema/type/double_valid.xml")
+                getFile("schema/simpletype/validation/double.xsd"),
+                getFile("schema/simpletype/validation/double_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/type/double.xsd"),
-                getFile("schema/type/double_novalid.xml")
+                getFile("schema/simpletype/validation/double.xsd"),
+                getFile("schema/simpletype/validation/double_novalid.xml")
             )
         );
     }
@@ -42,15 +42,15 @@ class XmlValidatorTest {
     void testValidateXsdBaseTypeRestriction() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/restriction/base_type_restriction.xsd"),
-                getFile("schema/restriction/base_type_restriction_valid.xml")
+                getFile("schema/simpletype/restriction/base_type_restriction.xsd"),
+                getFile("schema/simpletype/restriction/base_type_restriction_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/restriction/base_type_restriction.xsd"),
-                getFile("schema/restriction/base_type_restriction_novalid.xml")
+                getFile("schema/simpletype/restriction/base_type_restriction.xsd"),
+                getFile("schema/simpletype/restriction/base_type_restriction_novalid.xml")
             )
         );
     }
@@ -60,15 +60,15 @@ class XmlValidatorTest {
     void testValidateXsdBaseTypeRestrictionWithRegexPattern() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/restriction/base_type_restriction_with_pattern.xsd"),
-                getFile("schema/restriction/base_type_restriction_with_pattern_valid.xml")
+                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern.xsd"),
+                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/restriction/base_type_restriction_with_pattern.xsd"),
-                getFile("schema/restriction/base_type_restriction_with_pattern_novalid.xml")
+                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern.xsd"),
+                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern_novalid.xml")
             )
         );
     }
