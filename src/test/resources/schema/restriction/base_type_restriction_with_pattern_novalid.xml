@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<some_number xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="base_type_restriction_with_pattern.xsd">2.34</some_number>

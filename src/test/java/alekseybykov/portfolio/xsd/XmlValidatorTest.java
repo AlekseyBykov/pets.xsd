@@ -55,6 +55,24 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate XSD base type restriction with regex pattern")
+    void testValidateXsdBaseTypeRestrictionWithRegexPattern() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/restriction/base_type_restriction_with_pattern.xsd"),
+                getFile("schema/restriction/base_type_restriction_with_pattern_valid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/restriction/base_type_restriction_with_pattern.xsd"),
+                getFile("schema/restriction/base_type_restriction_with_pattern_novalid.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }
