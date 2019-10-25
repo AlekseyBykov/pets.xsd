@@ -116,6 +116,24 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate complex XSD type")
+    void testValidateComplexXsdType() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/complextype/book.xsd"),
+                getFile("schema/complextype/book_valid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/complextype/book.xsd"),
+                getFile("schema/complextype/book_sequence_novalid.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }

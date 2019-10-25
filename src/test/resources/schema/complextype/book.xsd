@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:simpleType name = "UnsignedInt">
+        <xsd:restriction base="xsd:int">
+            <xsd:minInclusive value="0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Book">
+        <xsd:sequence> <!-- 'all' for arbitrary order -->
+            <xsd:element name="isbn" type="xsd:string"/>         <!-- mandatory -->
+            <xsd:element name="title" type="xsd:token"/>        <!-- mandatory -->
+            <xsd:element name="author" type="xsd:token"/>        <!-- mandatory -->
+            <xsd:element name="publisher" type="xsd:token" maxOccurs="unbounded"/> <!-- mandatory -->
+            <xsd:element name="page_number" type="UnsignedInt"/> <!-- mandatory -->
+            <xsd:element name="description" type="xsd:string" minOccurs="0"/>      <!-- optional -->
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:element name="book" type="Book"/>
+
+</xsd:schema>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="book.xsd">
+  <isbn>9781846282522</isbn>
+  <title>Fundamental Networking in Java</title>
+  <author>Esmond Pitt</author>
+  <publisher>Apress</publisher>
+  <publisher>Prentice Hall</publisher>
+  <publisher>Addison Wesley</publisher>
+  <page_number>382</page_number>
+  <!--Optional:-->
+  <description>The book provides complete coverage of fundamental IP networking in Java</description>
+</book>
