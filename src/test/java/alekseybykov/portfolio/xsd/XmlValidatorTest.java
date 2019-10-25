@@ -60,15 +60,33 @@ class XmlValidatorTest {
     void testValidateXsdBaseTypeRestrictionWithRegexPattern() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern.xsd"),
-                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern_valid.xml")
+                getFile("schema/simpletype/restriction/pattern_restriction.xsd"),
+                getFile("schema/simpletype/restriction/pattern_restriction_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern.xsd"),
-                getFile("schema/simpletype/restriction/base_type_restriction_with_pattern_novalid.xml")
+                getFile("schema/simpletype/restriction/pattern_restriction.xsd"),
+                getFile("schema/simpletype/restriction/pattern_restriction_novalid.xml")
+            )
+        );
+    }
+
+    @Test
+    @DisplayName("Validate XSD base type list restriction")
+    void testValidateXsdListRestriction() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/simpletype/restriction/list_restriction.xsd"),
+                getFile("schema/simpletype/restriction/list_restriction_valid.xml")
+            )
+        );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/simpletype/restriction/list_restriction.xsd"),
+                getFile("schema/simpletype/restriction/list_restriction_novalid.xml")
             )
         );
     }

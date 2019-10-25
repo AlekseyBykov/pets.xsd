@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<some_number xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:noNamespaceSchemaLocation="list_restriction.xsd">10 10.3 11.111 12.1234567</some_number>
