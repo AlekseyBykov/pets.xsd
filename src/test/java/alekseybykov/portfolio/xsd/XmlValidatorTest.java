@@ -132,6 +132,13 @@ class XmlValidatorTest {
                 getFile("schema/complextype/book_sequence_novalid.xml")
             )
         );
+
+        assertFalse(
+            XmlValidator.validate(
+                getFile("schema/complextype/book.xsd"),
+                getFile("schema/complextype/book_choise_novalid.xml")
+            )
+        );
     }
 
     private File getFile(String fileName) {
