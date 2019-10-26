@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://alekseybykov.github.io/Catalog"
+            xmlns:book="http://alekseybykov.github.io/BookType.xsd"
+            elementFormDefault="qualified">
+
+    <xsd:import schemaLocation="../book/BookType.xsd" namespace="http://alekseybykov.github.io/BookType.xsd"/>
+
+    <!-- define concrete element -->
+    <xsd:element name="catalog">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="book" type="book:BookType"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>

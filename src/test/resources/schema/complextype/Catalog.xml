@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c:catalog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://alekseybykov.github.io/Catalog catalog/CatalogType.xsd"
+            xmlns:c="http://alekseybykov.github.io/Catalog"
+            xmlns:b="http://alekseybykov.github.io/BookType.xsd"
+            xmlns:p="http://alekseybykov.github.io/PersonType.xsd">
+    <c:book>
+        <b:isbn>9781846282522</b:isbn>
+        <b:title>Fundamental Networking in Java</b:title>
+        <b:author>
+            <p:firstName>Pitt</p:firstName>
+            <p:lastName>Papper</p:lastName>
+        </b:author>
+        <b:publisher>Apress</b:publisher>
+        <b:publisher>Pack Publishing</b:publisher>
+        <b:publisher>Eddison Wesley</b:publisher>
+        <b:pageNumber>382</b:pageNumber>
+        <b:description>The book provides complete coverage of fundamental IP networking in Java</b:description>
+        <b:papper>Papper</b:papper>
+    </c:book>
+</c:catalog>

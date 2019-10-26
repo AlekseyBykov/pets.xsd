@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+        xmlns:uint="http://alekseybykov.github.io/UnsignedIntType.xsd"
+        targetNamespace="http://alekseybykov.github.io/PersonType.xsd"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="qualified">
+
+    <xsd:import schemaLocation="../uint/UnsignedIntType.xsd"
+                namespace="http://alekseybykov.github.io/UnsignedIntType.xsd"/>
+
+    <xsd:complexType name="PersonType">
+        <xsd:sequence>
+            <xsd:element name="firstName" type="xsd:string"/>
+            <xsd:element name="lastName" type="xsd:string"/>
+            <xsd:element name="middleName" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="years" type="uint:UnsignedIntType" minOccurs="0"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

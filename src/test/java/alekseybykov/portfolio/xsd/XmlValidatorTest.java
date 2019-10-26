@@ -117,12 +117,12 @@ class XmlValidatorTest {
     }
 
     @Test
-    @DisplayName("Validate complex XSD type")
+    @DisplayName("Validate complex XSD types")
     void testValidateComplexXsdType() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/complextype/book/book.xsd"),
-                getFile("schema/complextype/book/book.xml")
+                getFile("schema/complextype/catalog/CatalogType.xsd"),
+                getFile("schema/complextype/Catalog.xml")
             )
         );
     }
