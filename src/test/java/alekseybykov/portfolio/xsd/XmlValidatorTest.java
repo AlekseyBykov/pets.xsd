@@ -141,6 +141,17 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate nesting XSD types")
+    void testValidateNestingXsdTypes() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/complextype/nested.xsd"),
+                getFile("schema/complextype/nested_valid.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }
