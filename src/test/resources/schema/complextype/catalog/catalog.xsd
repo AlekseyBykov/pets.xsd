@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:include schemaLocation="../book/book.xsd"/>
+
+    <xsd:complexType name="Catalog">
+        <xsd:all>
+            <xsd:element name="book" type="Book" minOccurs="0" maxOccurs="1"/>
+        </xsd:all>
+    </xsd:complexType>
+
+    <xsd:element name="catalog" type="Catalog"/>
+
+</xsd:schema>

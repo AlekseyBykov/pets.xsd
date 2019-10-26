@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
 
-    <xsd:simpleType name = "UnsignedInt">
-        <xsd:restriction base="xsd:int">
-            <xsd:minInclusive value="0"/>
-        </xsd:restriction>
-    </xsd:simpleType>
+    <xsd:include schemaLocation="../person/person.xsd"/>
+    <xsd:include schemaLocation="../uint/uint.xsd"/>
 
     <xsd:complexType name="Book">
         <xsd:sequence>
             <xsd:element name="isbn" type="xsd:string"/>
             <xsd:element name="title" type="xsd:token"/>
-            <xsd:element name="author" type="xsd:token"/>
+            <xsd:element name="person" type="Person"/>
             <xsd:element name="publisher" type="xsd:token" maxOccurs="unbounded"/>
             <xsd:element name="page_number" type="UnsignedInt"/>
             <xsd:element name="description" type="xsd:string" minOccurs="0"/>
@@ -22,14 +19,6 @@
         </xsd:sequence>
     </xsd:complexType>
 
-    <xsd:complexType name="Page">
-        <xsd:all>
-            <xsd:element name="book" type="Book"/>
-            <xsd:element name="number" type="xsd:int"/>
-        </xsd:all>
-    </xsd:complexType>
-
     <xsd:element name="book" type="Book"/>
-    <xsd:element name="page" type="Page"/>
 
 </xsd:schema>

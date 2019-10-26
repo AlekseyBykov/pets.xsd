@@ -42,15 +42,15 @@ class XmlValidatorTest {
     void testValidateXsdBaseTypeRestriction() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/base_type_restriction.xsd"),
-                getFile("schema/simpletype/restriction/base_type_restriction_valid.xml")
+                getFile("schema/simpletype/content/restriction/base_type_restriction.xsd"),
+                getFile("schema/simpletype/content/restriction/base_type_restriction_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/base_type_restriction.xsd"),
-                getFile("schema/simpletype/restriction/base_type_restriction_novalid.xml")
+                getFile("schema/simpletype/content/restriction/base_type_restriction.xsd"),
+                getFile("schema/simpletype/content/restriction/base_type_restriction_novalid.xml")
             )
         );
     }
@@ -60,15 +60,15 @@ class XmlValidatorTest {
     void testValidateXsdBaseTypeRestrictionWithRegexPattern() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/pattern_restriction.xsd"),
-                getFile("schema/simpletype/restriction/pattern_restriction_valid.xml")
+                getFile("schema/simpletype/content/restriction/pattern_restriction.xsd"),
+                getFile("schema/simpletype/content/restriction/pattern_restriction_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/pattern_restriction.xsd"),
-                getFile("schema/simpletype/restriction/pattern_restriction_novalid.xml")
+                getFile("schema/simpletype/content/restriction/pattern_restriction.xsd"),
+                getFile("schema/simpletype/content/restriction/pattern_restriction_novalid.xml")
             )
         );
     }
@@ -78,15 +78,15 @@ class XmlValidatorTest {
     void testValidateXsdListRestriction() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/list_restriction.xsd"),
-                getFile("schema/simpletype/restriction/list_restriction_valid.xml")
+                getFile("schema/simpletype/content/list/list_restriction.xsd"),
+                getFile("schema/simpletype/content/list/list_restriction_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/list_restriction.xsd"),
-                getFile("schema/simpletype/restriction/list_restriction_novalid.xml")
+                getFile("schema/simpletype/content/list/list_restriction.xsd"),
+                getFile("schema/simpletype/content/list/list_restriction_novalid.xml")
             )
         );
     }
@@ -96,22 +96,22 @@ class XmlValidatorTest {
     void testValidateXsdUnionRestriction() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/union_enum.xsd"),
-                getFile("schema/simpletype/restriction/union_enum_valid.xml")
+                getFile("schema/simpletype/content/union/union_enum.xsd"),
+                getFile("schema/simpletype/content/union/union_enum_valid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/union_enum.xsd"),
-                getFile("schema/simpletype/restriction/union_enum_novalid.xml")
+                getFile("schema/simpletype/content/union/union_enum.xsd"),
+                getFile("schema/simpletype/content/union/union_enum_novalid.xml")
             )
         );
 
         assertFalse(
             XmlValidator.validate(
-                getFile("schema/simpletype/restriction/union_enum.xsd"),
-                getFile("schema/simpletype/restriction/union_list_novalid.xml")
+                getFile("schema/simpletype/content/union/union_enum.xsd"),
+                getFile("schema/simpletype/content/union/union_list_novalid.xml")
             )
         );
     }
@@ -121,33 +121,8 @@ class XmlValidatorTest {
     void testValidateComplexXsdType() {
         assertTrue(
             XmlValidator.validate(
-                getFile("schema/complextype/book.xsd"),
-                getFile("schema/complextype/book_valid.xml")
-            )
-        );
-
-        assertFalse(
-            XmlValidator.validate(
-                getFile("schema/complextype/book.xsd"),
-                getFile("schema/complextype/book_sequence_novalid.xml")
-            )
-        );
-
-        assertFalse(
-            XmlValidator.validate(
-                getFile("schema/complextype/book.xsd"),
-                getFile("schema/complextype/book_choise_novalid.xml")
-            )
-        );
-    }
-
-    @Test
-    @DisplayName("Validate nesting XSD types")
-    void testValidateNestingXsdTypes() {
-        assertTrue(
-            XmlValidator.validate(
-                getFile("schema/complextype/nested.xsd"),
-                getFile("schema/complextype/nested_valid.xml")
+                getFile("schema/complextype/book/book.xsd"),
+                getFile("schema/complextype/book/book.xml")
             )
         );
     }
