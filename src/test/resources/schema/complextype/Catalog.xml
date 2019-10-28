@@ -11,6 +11,7 @@
             <p:firstName>Pitt</p:firstName>
             <p:lastName>Esmond</p:lastName>
         </b:author>
+        <b:price currency="USD">100</b:price>
         <b:publisher>Apress</b:publisher>
         <b:publisher>Pack Publishing</b:publisher>
         <b:publisher>Eddison Wesley</b:publisher>

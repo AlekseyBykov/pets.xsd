@@ -14,6 +14,23 @@
             <xsd:element name="isbn" type="xsd:string"/>
             <xsd:element name="title" type="xsd:token"/>
             <xsd:element name="author" type="person:PersonType"/>
+            <xsd:element name="price">
+                <xsd:complexType>
+                    <xsd:simpleContent>
+                        <xsd:extension base="uint:UnsignedIntType">
+                            <xsd:attribute name="currency">
+                                <xsd:simpleType>
+                                    <xsd:restriction base="xsd:string">
+                                        <xsd:enumeration value="UAH"/>
+                                        <xsd:enumeration value="USD"/>
+                                        <xsd:enumeration value="EUR"/>
+                                    </xsd:restriction>
+                                </xsd:simpleType>
+                            </xsd:attribute>
+                        </xsd:extension>
+                    </xsd:simpleContent>
+                </xsd:complexType>
+            </xsd:element>
             <xsd:element name="publisher" type="xsd:token" maxOccurs="unbounded"/>
             <xsd:element name="pageNumber" type="uint:UnsignedIntType"/>
             <xsd:element name="description" type="xsd:string" minOccurs="0"/>
