@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XSLT can be added here -->
+<letter xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:noNamespaceSchemaLocation="letter/Letter.xsd">Dear <firstName>Name</firstName>,
+    Your order: <id>1</id>.
+    <title>Order 1 name</title> - <count>10</count>
+    <title>Order 2 name</title> - <count>20</count>
+    <title>Order 3 name</title> - <count>30</count>
+    Total coast: <total>100</total><currency>USD</currency>
+</letter>

@@ -127,6 +127,17 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate mixing text with elements")
+    void testValidateMixedMode() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/complextype/letter/Letter.xsd"),
+                getFile("schema/complextype/Letter.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }
