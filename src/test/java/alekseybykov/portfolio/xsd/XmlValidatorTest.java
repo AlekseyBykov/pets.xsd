@@ -138,6 +138,17 @@ class XmlValidatorTest {
         );
     }
 
+    @Test
+    @DisplayName("Validate inheritance")
+    void testValidateInheritance() {
+        assertTrue(
+            XmlValidator.validate(
+                getFile("schema/shop/Orders.xsd"),
+                getFile("schema/shop/Orders.xml")
+            )
+        );
+    }
+
     private File getFile(String fileName) {
         return Paths.get("src", "test", "resources").resolve(fileName).toFile();
     }

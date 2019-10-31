@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://entity.shop"
+            xmlns:tns="http://entity.shop"
+            elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="Entity.xsd"/>
+    
+    <xsd:simpleType name="Price">
+        <xsd:restriction base="xsd:double">
+            <xsd:minInclusive value="0"/>
+            <xsd:pattern value="\d+\.\d{2,2}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="Product" abstract="true">
+        <xsd:complexContent>
+            <xsd:extension base="tns:Entity">
+                <xsd:sequence>
+                    <xsd:element name="title" type="xsd:token"/>
+                    <xsd:element name="price" type="tns:Price"/>
+                    <xsd:element name="categories" type="xsd:token" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="description" type="xsd:string" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:simpleType name="Category">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="Fantasy"/>
+            <xsd:enumeration value="Action"/>
+            <xsd:enumeration value="none"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    
+    <xsd:complexType name="Book">
+        <xsd:complexContent>
+            <xsd:extension base="tns:Product">
+                <xsd:sequence>
+                    <xsd:element name="author" type="xsd:token" minOccurs="0"/>
+                    <xsd:element name="isbn" minOccurs="0">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:pattern value="ISBN-[0-9]{5,5}"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="Journal">
+        <xsd:complexContent>
+            <xsd:extension base="tns:Product">
+                <xsd:sequence>
+                    <xsd:element name="isbn" minOccurs="0">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:pattern value="ISBN-[0-9]{5,5}"/>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>

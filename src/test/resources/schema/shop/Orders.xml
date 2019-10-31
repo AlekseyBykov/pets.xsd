@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:orders xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://order.shop Orders.xsd"
+            xmlns:tns="http://order.shop"
+            xmlns:p="http://entity.shop"
+            xmlns:e="http://entity.shop">
+
+  <tns:order id="0">
+
+    <tns:item>
+      <tns:product id="1" xsi:type="e:Journal">
+        <p:title>token</p:title>
+        <p:price>1.00</p:price>
+      </tns:product>
+      <tns:count>3</tns:count>
+    </tns:item>
+
+    <tns:item>
+      <tns:product id="2" xsi:type="e:Book">
+        <p:title>token</p:title>
+        <p:price>2.00</p:price>
+      </tns:product>
+      <tns:count>3</tns:count>
+    </tns:item>
+
+    <tns:delivery>
+      <tns:name>token</tns:name>
+      <tns:index>token</tns:index>
+      <tns:country>token</tns:country>
+      <tns:city>token</tns:city>
+      <tns:address>token</tns:address>
+    </tns:delivery>
+  </tns:order>
+</tns:orders>

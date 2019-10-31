@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://order.shop"
+            xmlns:tns="http://order.shop"
+            elementFormDefault="qualified">
+
+    <xsd:include schemaLocation="Order.xsd"/>
+
+    <xsd:element name="orders">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="order" type="tns:Order" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:unique name="ProductID">
+                        <xsd:selector xpath=".//tns:product"/>
+                        <xsd:field xpath="@id"/>
+                    </xsd:unique>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+        <xsd:unique name="OrderID">
+            <xsd:selector xpath="tns:order"/>
+            <xsd:field xpath="@id"/>
+        </xsd:unique>
+    </xsd:element>
+
+</xsd:schema>

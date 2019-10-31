@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            targetNamespace="http://order.shop"
+            xmlns:tns="http://order.shop"
+            xmlns:e="http://entity.shop"
+            elementFormDefault="qualified">
+
+    <xsd:import namespace="http://entity.shop" schemaLocation="Product.xsd"/>
+
+    <xsd:complexType name="Item">
+        <xsd:sequence>
+            <xsd:element name="product" type="e:Product"/>
+            <xsd:element name="count">
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:int">
+                        <xsd:minInclusive value="1"/>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+    
+    <xsd:simpleType name="Phone">
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value="\+\d{7,7}"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Email">
+        <xsd:restriction base="xsd:token">
+            <xsd:pattern value=".+@.+\..+"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:complexType name="Delivery">
+        <xsd:sequence>
+            <xsd:element name="name" type="xsd:token"/>
+            <xsd:element name="index" type="xsd:token" minOccurs="0"/>
+            <xsd:element name="country" type="xsd:token" minOccurs="0"/>
+            <xsd:element name="city" type="xsd:token" minOccurs="0"/>
+            <xsd:element name="address" type="xsd:token" minOccurs="0"/>
+            <xsd:element name="contact" maxOccurs="unbounded" minOccurs="0">
+                <xsd:simpleType>
+                    <xsd:union memberTypes="tns:Phone tns:Email"/>
+                </xsd:simpleType>
+            </xsd:element>
+        </xsd:sequence>
+    </xsd:complexType>
+
+    <xsd:complexType name="Order">
+        <xsd:complexContent>
+            <xsd:extension base="e:Entity">
+                <xsd:sequence>
+                    <xsd:element name="item" type="tns:Item" maxOccurs="unbounded"/>
+                    <xsd:element name="delivery" type="tns:Delivery"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+</xsd:schema>
