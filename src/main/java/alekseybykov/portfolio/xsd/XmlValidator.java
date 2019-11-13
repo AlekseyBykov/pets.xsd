@@ -1,6 +1,3 @@
-//
-// Feel free to use these solutions in your work.
-//
 package alekseybykov.portfolio.xsd;
 
 import lombok.AccessLevel;
@@ -15,10 +12,6 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * @author  aleksey.n.bykov@gmail.com
- * @version 2019-10-25
- */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 class XmlValidator {
     static boolean validate(File schemaFile, File xmlFile) {
