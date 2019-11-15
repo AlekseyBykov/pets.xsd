@@ -1,7 +1,5 @@
 package alekseybykov.portfolio.xsd;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
 import org.xml.sax.SAXException;
 
 import javax.xml.XMLConstants;
@@ -12,7 +10,6 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
 class XmlValidator {
     static boolean validate(File schemaFile, File xmlFile) {
         SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
