@@ -10,6 +10,10 @@ import javax.xml.validation.Validator;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * @author Aleksey Bykov
+ * @since 25.10.2019
+ */
 class XmlValidator {
     static boolean validate(File schemaFile, File xmlFile) {
         SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);

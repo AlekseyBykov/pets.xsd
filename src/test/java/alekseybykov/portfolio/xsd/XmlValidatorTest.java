@@ -9,6 +9,10 @@ import java.nio.file.Paths;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * @author Aleksey Bykov
+ * @since 25.10.2019
+ */
 @DisplayName("Tests for XML documents validation by XSD schemas")
 class XmlValidatorTest {
 
